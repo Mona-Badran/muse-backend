@@ -5,3 +5,4 @@ const authRouter = new Router();
 
 authRouter.post("/login", login);
 authRouter.post("/logout", logout);
+authRouter.post("/register", register);
