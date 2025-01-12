@@ -10,6 +10,6 @@ app.use(
     })
 );
 
-app.listen(8080, () => {
-    console.log("Server running on port 8080");
+app.listen(process.env.SERVER_PORT, () => {
+    console.log(`Server running on port {SERVER_PORT}`);
 });
