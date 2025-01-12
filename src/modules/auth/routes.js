@@ -7,3 +7,5 @@ authRouter.post("/login", login);
 authRouter.post("/logout", logout);
 authRouter.post("/register", register);
 authRouter.post("/password", forgotPassword);
+
+export default authRouter;
