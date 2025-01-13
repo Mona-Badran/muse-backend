@@ -13,4 +13,8 @@ export const init = (app) => {
     );
 };
 
-export const registerRoutes = (app, ...routers) => {};
+export const registerRoutes = (app, ...routers) => {
+    routers.forEach((router) => {
+        app.use(router);
+    });
+};
