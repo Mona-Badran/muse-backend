@@ -12,3 +12,5 @@ export const init = (app) => {
         })
     );
 };
+
+export const registerRoutes = (app, ...routers) => {};
