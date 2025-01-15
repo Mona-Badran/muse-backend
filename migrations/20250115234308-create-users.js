@@ -25,6 +25,9 @@ module.exports = {
           model: 'user_types',
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
     });
 
   },
