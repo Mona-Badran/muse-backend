@@ -9,6 +9,10 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+      user_type: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
     });
   },
 
