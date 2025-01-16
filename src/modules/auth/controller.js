@@ -8,6 +8,10 @@ export const login = async (req, res) => {
         const user = await User.findOne({
             where: { username },
         });
+
+        if (!user) {
+            return res.status(400).send({ message: "Invalid credentials" });
+        }
     } catch (error) {
         
     }
