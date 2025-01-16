@@ -31,6 +31,10 @@ export const register = async (req, res) => {
 
         const hashedPassword = await handlePassword(password);
 
+        const user = await User.create({
+            username,
+            password: hashedPassword,
+        });
     } catch (error) {
         
     }
