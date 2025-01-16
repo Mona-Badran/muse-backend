@@ -1,3 +1,6 @@
 export default (sequelize, DataTypes) => {
-return MLResult;
+    const MLResult = sequelize.define(
+        'MLResult',
+    );
+    return MLResult;
 };
