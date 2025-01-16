@@ -15,6 +15,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.FLOAT,
             },
+            longitude: 
+            {
+                type: DataTypes.FLOAT,
+            },
         },
     );
     return Site;
