@@ -20,5 +20,9 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
             },
         },
+        {
+            tableName: 'art_galleries',
+            timestamps: false,
+        }
     );
 };
