@@ -7,6 +7,10 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
+            description: 
+            {
+                type: DataTypes.TEXT,
+            },
         },
     );
     return Site;
