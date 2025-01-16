@@ -13,5 +13,9 @@ export default (sequelize, DataTypes) => {
                 allowNull: false,
             },
         },
+        {
+            tableName: 'attend',
+            timestamps: false,
+        }
     );
 };
