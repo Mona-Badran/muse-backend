@@ -1,6 +1,8 @@
-import { User } from "../../db/models/index.js";
+import db from "../../db/models/index.js";
 import jwt from "jsonwebtoken";
 import { handlePassword } from "./service.js";
+
+const { User } = db;
 
 export const login = async (req, res) => {
     try {
