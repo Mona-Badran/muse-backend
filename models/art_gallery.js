@@ -31,4 +31,5 @@ export default (sequelize, DataTypes) => {
             as: 'owner',
         });
     };
+    return ArtGallery;
 };
