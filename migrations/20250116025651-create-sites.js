@@ -16,6 +16,9 @@ export default {
       latitude: {
         type: Sequelize.FLOAT,
       },
+      longitude: {
+        type: Sequelize.FLOAT,
+      },
     });
 
   },
