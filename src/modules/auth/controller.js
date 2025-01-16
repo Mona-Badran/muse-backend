@@ -20,7 +20,8 @@ export const login = async (req, res) => {
         return res.send({ user, token });
 
     } catch (error) {
-        
+        console.error(error.message);
+        res.status(500).send({ message: "Something went wrong" });
     }
 };
 
