@@ -12,6 +12,9 @@ export const login = async (req, res) => {
         if (!user) {
             return res.status(400).send({ message: "Invalid credentials" });
         }
+        
+        await handlePassword(password, user.password);
+
     } catch (error) {
         
     }
