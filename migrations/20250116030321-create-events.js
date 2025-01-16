@@ -16,6 +16,12 @@ export default {
       ar_assets: {
         type: Sequelize.STRING,
       },
+      start_time: {
+        type: Sequelize.DATE,
+      },
+      end_time: {
+        type: Sequelize.DATE,
+      },
     });
   },
 
