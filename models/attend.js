@@ -18,4 +18,5 @@ export default (sequelize, DataTypes) => {
             timestamps: false,
         }
     );
+    return Attend;
 };
