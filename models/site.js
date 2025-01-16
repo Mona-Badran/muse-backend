@@ -24,6 +24,10 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
             },
         },
+        {
+            tableName: 'sites',
+            timestamps: false,
+        }
     );
     return Site;
 };
