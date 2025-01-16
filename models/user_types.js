@@ -6,6 +6,11 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
+        },
+        {
+            tableName: 'user_types',
+            timestamps: true,
+            underscored: true,
         }
     );
 };
