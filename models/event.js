@@ -11,6 +11,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.TEXT,
             },
+            ar_assets: 
+            {
+                type: DataTypes.STRING,
+            },
         },
     );
     return Event;
