@@ -16,6 +16,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.INTEGER,
             },
+        },
+        {
+            tableName: 'images',
+            timestamps: false,
         }
     );
 };
