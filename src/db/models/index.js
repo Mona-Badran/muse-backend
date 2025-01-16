@@ -6,7 +6,7 @@ import { Sequelize } from 'sequelize';
 
 const basename = path.basename(import.meta.url);
 const env = process.env.NODE_ENV || 'development';
-const config = (await import('../config/config.json')).default[env];
+const config = (await import('../../../config/config.json')).default[env];
 const db = {};
 
 let sequelize;
