@@ -2,20 +2,20 @@ export default (sequelize, DataTypes) => {
     const ArtGallery = sequelize.define(
         'ArtGallery',
         {
-            name: 
+            name:
             {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            description: 
+            description:
             {
                 type: DataTypes.TEXT,
             },
-            images: 
+            images:
             {
                 type: DataTypes.TEXT,
             },
-            owner_id: 
+            owner_id:
             {
                 type: DataTypes.INTEGER,
             },
@@ -25,4 +25,10 @@ export default (sequelize, DataTypes) => {
             timestamps: false,
         }
     );
+    ArtGallery.associate = (models) => {
+        ArtGallery.belongsTo(models.User, {
+            foreignKey: 'owner_id',
+            as: 'owner',
+        });
+    };
 };
