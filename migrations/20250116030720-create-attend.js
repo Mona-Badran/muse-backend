@@ -10,6 +10,15 @@ export default {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
+      event_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'events',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
     });
   },
 
