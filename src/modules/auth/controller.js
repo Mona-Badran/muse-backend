@@ -12,9 +12,11 @@ export const login = async (req, res) => {
         if (!user) {
             return res.status(400).send({ message: "Invalid credentials" });
         }
-        
+
         await handlePassword(password, user.password);
 
+        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+        
     } catch (error) {
         
     }
