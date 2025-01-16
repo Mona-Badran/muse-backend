@@ -15,6 +15,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.TEXT,
             },
+            owner_id: 
+            {
+                type: DataTypes.INTEGER,
+            },
         },
     );
 };
