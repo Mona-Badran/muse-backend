@@ -20,6 +20,15 @@ export default {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
+      ML_result_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'ML_results',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+      },
     });
   },
 
