@@ -19,6 +19,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.FLOAT,
             },
+            user_id: 
+            {
+                type: DataTypes.INTEGER,
+            },
         },
     );
     return Site;
