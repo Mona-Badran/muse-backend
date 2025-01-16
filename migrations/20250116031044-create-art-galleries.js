@@ -29,6 +29,6 @@ export default {
   },
 
   async down (queryInterface, Sequelize) {
-    
+    await queryInterface.dropTable('art_galleries');
   }
 };
