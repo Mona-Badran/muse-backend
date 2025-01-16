@@ -39,7 +39,8 @@ export const register = async (req, res) => {
         return res.status(201).send(user);
 
     } catch (error) {
-        
+        console.error(error.message);
+    res.status(500).send({ message: "Something went wrong" });
     }
 };
 export const logout = async (req, res) => {};
