@@ -15,6 +15,10 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.TEXT,
             },
         },
+        {
+            tableName: 'ML_results',
+            timestamps: false,
+        }
     );
     return MLResult;
 };
