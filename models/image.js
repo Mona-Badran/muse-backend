@@ -12,6 +12,10 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
+            ML_result_id: 
+            {
+                type: DataTypes.INTEGER,
+            },
         }
     );
 };
