@@ -8,6 +8,15 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+      style: {
+        type: Sequelize.STRING,
+      },
+      common_artists: {
+        type: Sequelize.STRING,
+      },
+      description: {
+        type: Sequelize.TEXT,
+      },
     });
   },
 
