@@ -13,6 +13,9 @@ export default {
       description: {
         type: Sequelize.TEXT,
       },
+      images: {
+        type: Sequelize.TEXT,
+      },
     });
   },
 
