@@ -29,6 +29,8 @@ export const register = async (req, res) => {
     try {
         const { username, password } = req.body;
 
+        const hashedPassword = await handlePassword(password);
+
     } catch (error) {
         
     }
