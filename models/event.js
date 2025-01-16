@@ -2,24 +2,24 @@ export default (sequelize, DataTypes) => {
     const Event = sequelize.define(
         'Event',
         {
-            name: 
+            name:
             {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            description: 
+            description:
             {
                 type: DataTypes.TEXT,
             },
-            ar_assets: 
+            ar_assets:
             {
                 type: DataTypes.STRING,
             },
-            start_time: 
+            start_time:
             {
                 type: DataTypes.DATE,
             },
-            end_time: 
+            end_time:
             {
                 type: DataTypes.DATE,
             },
@@ -29,5 +29,13 @@ export default (sequelize, DataTypes) => {
             timestamps: false,
         }
     );
+    Event.associate = (models) => {
+        Event.belongsToMany(models.User, {
+            through: 'Attend',
+            foreignKey: 'event_id',
+            as: 'attendees',
+        });
+    };
+
     return Event;
 };
