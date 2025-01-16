@@ -10,6 +10,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.STRING,
             },
+            description: 
+            {
+                type: DataTypes.TEXT,
+            },
         },
     );
     return MLResult;
