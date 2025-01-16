@@ -24,6 +24,10 @@ export default (sequelize, DataTypes) => {
                 type: DataTypes.DATE,
             },
         },
+        {
+            tableName: 'events',
+            timestamps: false,
+        }
     );
     return Event;
 };
