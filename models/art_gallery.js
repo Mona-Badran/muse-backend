@@ -11,6 +11,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.TEXT,
             },
+            images: 
+            {
+                type: DataTypes.TEXT,
+            },
         },
     );
 };
