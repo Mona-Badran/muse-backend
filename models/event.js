@@ -19,6 +19,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.DATE,
             },
+            end_time: 
+            {
+                type: DataTypes.DATE,
+            },
         },
     );
     return Event;
