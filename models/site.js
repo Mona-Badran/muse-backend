@@ -2,24 +2,24 @@ export default (sequelize, DataTypes) => {
     const Site = sequelize.define(
         'Site',
         {
-            name: 
+            name:
             {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            description: 
+            description:
             {
                 type: DataTypes.TEXT,
             },
-            latitude: 
+            latitude:
             {
                 type: DataTypes.FLOAT,
             },
-            longitude: 
+            longitude:
             {
                 type: DataTypes.FLOAT,
             },
-            user_id: 
+            user_id:
             {
                 type: DataTypes.INTEGER,
             },
@@ -29,5 +29,12 @@ export default (sequelize, DataTypes) => {
             timestamps: false,
         }
     );
+    Site.associate = (models) => {
+        Site.belongsTo(models.User, {
+            foreignKey: 'user_id',
+            as: 'user',
+        });
+    };
+
     return Site;
 };
