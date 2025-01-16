@@ -6,6 +6,10 @@ export default (sequelize, DataTypes) => {
             {
                 type: DataTypes.STRING,
             },
+            common_artists: 
+            {
+                type: DataTypes.STRING,
+            },
         },
     );
     return MLResult;
