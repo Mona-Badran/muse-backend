@@ -35,6 +35,9 @@ export const register = async (req, res) => {
             username,
             password: hashedPassword,
         });
+
+        return res.status(201).send(user);
+
     } catch (error) {
         
     }
