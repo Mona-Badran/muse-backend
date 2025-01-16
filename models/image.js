@@ -2,17 +2,17 @@ export default (sequelize, DataTypes) => {
     const Image = sequelize.define(
         'Image',
         {
-            image_url: 
+            image_url:
             {
                 type: DataTypes.TEXT,
                 allowNull: false,
             },
-            user_id: 
+            user_id:
             {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
-            ML_result_id: 
+            ML_result_id:
             {
                 type: DataTypes.INTEGER,
             },
@@ -22,4 +22,16 @@ export default (sequelize, DataTypes) => {
             timestamps: false,
         }
     );
+
+    Image.associate = (models) => {
+        Image.belongsTo(models.User, {
+            foreignKey: 'user_id',
+            as: 'user',
+        });
+        Image.belongsTo(models.MLResult, {
+            foreignKey: 'ML_result_id',
+            as: 'ML_result',
+        });
+    };
+
 };
