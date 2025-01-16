@@ -2,15 +2,15 @@ export default (sequelize, DataTypes) => {
     const MLResult = sequelize.define(
         'MLResult',
         {
-            style: 
+            style:
             {
                 type: DataTypes.STRING,
             },
-            common_artists: 
+            common_artists:
             {
                 type: DataTypes.STRING,
             },
-            description: 
+            description:
             {
                 type: DataTypes.TEXT,
             },
@@ -20,5 +20,12 @@ export default (sequelize, DataTypes) => {
             timestamps: false,
         }
     );
+    MLResult.associate = (models) => {
+        MLResult.hasMany(models.Image, {
+            foreignKey: 'ML_result_id',
+            as: 'images',
+        });
+    };
+
     return MLResult;
 };
