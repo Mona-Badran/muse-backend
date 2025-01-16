@@ -33,5 +33,5 @@ export default (sequelize, DataTypes) => {
             as: 'ML_result',
         });
     };
-
+    return Image;
 };
