@@ -13,6 +13,9 @@ export default {
       description: {
         type: Sequelize.TEXT,
       },
+      ar_assets: {
+        type: Sequelize.STRING,
+      },
     });
   },
 
