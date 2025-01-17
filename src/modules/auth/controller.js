@@ -52,8 +52,8 @@ export const register = async (req, res) => {
 export const registerArtGallery = async (req, res) => {
     try {
         const { name, description, images, owner_id } = req.body;
-        
-        const user = await User.create({
+
+        const artGallery = await ArtGallery.create({
             name,
             description,
             images,
