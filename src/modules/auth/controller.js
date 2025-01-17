@@ -49,5 +49,9 @@ export const register = async (req, res) => {
     res.status(500).send({ message: error.message });
     }
 };
+export const registerArtGallery = async (req, res) => {
+    
+};
+
 export const logout = async (req, res) => {};
 export const forgotPassword = async (req, res) => {};
