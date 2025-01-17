@@ -23,26 +23,29 @@ export const login = async (req, res) => {
 
     } catch (error) {
         console.error(error.message);
-        res.status(500).send({ message: "Something went wrong" });
+        res.status(500).send({ message: error.message });
     }
 };
 
 export const register = async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, password, user_type_id} = req.body;
 
         const hashedPassword = await handlePassword(password);
 
         const user = await User.create({
             username,
             password: hashedPassword,
+            user_type_id,
         });
 
         return res.status(201).send(user);
 
     } catch (error) {
         console.error(error.message);
-    res.status(500).send({ message: "Something went wrong" });
+        console.log(error);
+        
+    res.status(500).send({ message: error.message });
     }
 };
 export const logout = async (req, res) => {};
