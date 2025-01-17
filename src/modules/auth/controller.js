@@ -19,7 +19,7 @@ export const login = async (req, res) => {
         await handlePassword(password, user.password);
 
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1d" });
-        
+
         return res.send({ user, token });
 
     } catch (error) {
@@ -30,7 +30,7 @@ export const login = async (req, res) => {
 
 export const register = async (req, res) => {
     try {
-        const { username, password, user_type_id} = req.body;
+        const { username, password, user_type_id } = req.body;
 
         const hashedPassword = await handlePassword(password);
 
@@ -45,13 +45,14 @@ export const register = async (req, res) => {
     } catch (error) {
         console.error(error.message);
         console.log(error);
-        
-    res.status(500).send({ message: error.message });
+
+        res.status(500).send({ message: error.message });
     }
 };
+
 export const registerArtGallery = async (req, res) => {
     try {
-        const { name, description, images, owner_id} = req.body;
+        const { name, description, images, owner_id } = req.body;
         const user = await User.create({
             name,
             description,
@@ -59,8 +60,12 @@ export const registerArtGallery = async (req, res) => {
             owner_id,
         });
         return res.status(201).send(user);
-    } catch (error) {}
+    } catch (error) {
+        console.error(error.message);
+        console.log(error);
+        res.status(500).send({ message: error.message });
+    }
 };
 
-export const logout = async (req, res) => {};
-export const forgotPassword = async (req, res) => {};
+export const logout = async (req, res) => { };
+export const forgotPassword = async (req, res) => { };
