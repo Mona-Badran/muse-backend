@@ -1,22 +1,23 @@
-'use strict';
-
 import fs from 'fs';
 import path from 'path';
 import { Sequelize } from 'sequelize';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const basename = path.basename(import.meta.url);
 const env = process.env.NODE_ENV || 'development';
-const config = (await import('../../../config/config.json')).default[env];
 const db = {};
 
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.PASSWORD, {
+  host: process.env.DB_HOST,
+  dialect: process.env.DB_DIALECT,
+  port: process.env.SERVER_PORT
+});
 
-fs.readdirSync(new URL('.', import.meta.url).pathname)
+// const modelsDir = path.dirname(new URL(import.meta.url).pathname).replace(/^\/([A-Za-z]):/, '$1:');
+const modelsDir = fileURLToPath(new URL('.', import.meta.url));
+
+fs.readdirSync(modelsDir)
   .filter(file => {
     return (
       file.indexOf('.') !== 0 &&
@@ -26,7 +27,8 @@ fs.readdirSync(new URL('.', import.meta.url).pathname)
     );
   })
   .forEach(async (file) => {
-    const model = (await import(path.join(new URL('.', import.meta.url).pathname, file))).default(
+    // const model = (await import(path.join(modelsDir, file))).default(
+    const model = (await import(pathToFileURL(path.join(modelsDir, file)).href)).default(
       sequelize,
       Sequelize.DataTypes
     );

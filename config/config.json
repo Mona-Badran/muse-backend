@@ -4,20 +4,23 @@
     "password": "21422",
     "database": "muse_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": 8080
   },
   "test": {
     "username": "root",
     "password": "21422",
     "database": "muse_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": 8080
   },
   "production": {
     "username": "root",
     "password": "21422",
     "database": "muse_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": 8080
   }
 }

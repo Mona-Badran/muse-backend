@@ -2,13 +2,13 @@ import express from "express";
 import dotenv from 'dotenv';
 import { init, registerRoutes} from './config/init.js';
 import connectToDatabase from './db/connection.js';
-import uathRouter from './modules/auth/routes.js';
+import authRouter from './modules/auth/routes.js';
 
 const app = express();
 dotenv.config();
 
 init(app);
-registerRoutes(app, uathRouter);
+registerRoutes(app, authRouter);
 
 app.use("/auth", authRouter);
 
