@@ -48,7 +48,6 @@ export const register = async (req, res) => {
                 owner_id: user.id,
             });
             return res.status(201).send({ user, artGallery });
-
         }
 
         return res.status(201).send({ user });
