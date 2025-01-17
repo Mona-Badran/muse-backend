@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import { handlePassword } from "./service.js";
 
 const { User } = db;
+const { ArtGallery } = db;
 
 export const login = async (req, res) => {
     try {
