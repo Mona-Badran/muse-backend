@@ -50,7 +50,9 @@ export const register = async (req, res) => {
     }
 };
 export const registerArtGallery = async (req, res) => {
-    
+    try {
+        const { name, description, images, owner_id} = req.body;
+    } catch (error) {}
 };
 
 export const logout = async (req, res) => {};
