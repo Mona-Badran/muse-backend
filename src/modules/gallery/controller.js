@@ -13,6 +13,7 @@ export const gallerySearch = async (req, res) => {
             },
         });
 
+        return res.send(galleries);
     } catch (error) {
         console.error(error.message);
         res.status(500).send({ message: error.message });
