@@ -65,6 +65,8 @@ export const register = async (req, res) => {
     }
 };
 
-export const logout = async (req, res) => { };
+export const logout = async (req, res) => { 
+    try {} catch (error) {}
+};
 
 export const forgotPassword = async (req, res) => { };
