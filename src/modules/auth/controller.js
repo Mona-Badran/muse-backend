@@ -40,40 +40,28 @@ export const register = async (req, res) => {
             user_type_id,
         });
 
-        if (user_type_id === 2 || user_type_id === 3) {
-            const artGallery = await registerArtGallery({
-                name,
-                description,
-                images,
-                owner_id: user.id,
-            });
-            return res.status(201).send({ user, artGallery });
+        if (user_type_id === 2) {
+            try {
+                const artGallery = await ArtGallery.create({
+                    name,
+                    description,
+                    images,
+                    owner_id: user.id,
+                });
+                console.log(artGallery);
+                
+                return res.status(201).send({ user, artGallery });
+            } catch (error) {
+                console.error(error.message);
+                throw new Error('Error creating art gallery');
+            }
+        } else {
+            return res.status(201).send({ user });
         }
-
-        return res.status(201).send({ user });
-
     } catch (error) {
         console.error(error.message);
+        console.error("error", error);
         res.status(500).send({ message: error.message });
-    }
-};
-
-export const registerArtGallery = async ({ name, description, images, owner_id }) => {
-    try {
-        const { name, description, images, owner_id } = req.body;
-
-        const artGallery = await ArtGallery.create({
-            name,
-            description,
-            images,
-            owner_id,
-        });
-
-        return artGallery;
-
-    } catch (error) {
-        console.error(error.message);
-        throw new Error('Error creating art gallery');
     }
 };
 
