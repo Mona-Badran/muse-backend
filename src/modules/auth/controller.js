@@ -74,8 +74,11 @@ export const logout = async (req, res) => {
         res.clearCookie('authToken', { httpOnly: true });
 
         return res.status(200).send({ message: 'Logged out successfully.' });
-        
-    } catch (error) {}
+
+    } catch (error) {
+        console.error('Error during logout:', error.message);
+        return res.status(500).send({ message: 'Logout failed. Please try again.' });
+    }
 };
 
 export const forgotPassword = async (req, res) => { };
