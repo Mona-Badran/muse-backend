@@ -1,3 +1,5 @@
+import db from "../../db/models/index.js";
+
 export const gallerySearch = async (req, res) => { };
 export const getGalleries = async (req, res) => { };
 export const getGallery = async (req, res) => { };
