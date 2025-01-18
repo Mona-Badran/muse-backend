@@ -20,7 +20,11 @@ export const gallerySearch = async (req, res) => {
     }
 };
 export const getGalleries = async (req, res) => { 
-    try {  } catch (error) {};
+    try {  } catch (error) {
+        return res.status(500).send({
+            message: "Somthing went wrong",
+        });
+    };
 };
 export const getGallery = async (req, res) => { };
 export const getEvent = async (req, res) => { };
