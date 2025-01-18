@@ -4,7 +4,15 @@ const { Event } = db;
 
 export const gallerySearch = async (req, res) => { 
     try {
-        
+        const { search } = req.query;
+        const galleries = await ArtGallery.findAll({
+            where: {
+                name: {
+                    [Op.iLike]: `%${search}%`,
+                },
+            },
+        });
+
     } catch (error) {
         console.error(error.message);
         res.status(500).send({ message: error.message });
