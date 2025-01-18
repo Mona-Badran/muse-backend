@@ -66,7 +66,9 @@ export const register = async (req, res) => {
 };
 
 export const logout = async (req, res) => { 
-    try {} catch (error) {}
+    try {
+        const token = req.headers.authorization?.split(' ')[1];
+    } catch (error) {}
 };
 
 export const forgotPassword = async (req, res) => { };
