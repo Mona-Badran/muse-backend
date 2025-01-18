@@ -65,6 +65,19 @@ export const register = async (req, res) => {
     }
 };
 
+export const registerArtGallery = async ({ name, description, images, owner_id }) => {
+    try {
+        const { name, description, images, owner_id } = req.body;
+
+
+        return artGallery;
+
+    } catch (error) {
+        console.error(error.message);
+        throw new Error('Error creating art gallery');
+    }
+};
+
 export const logout = async (req, res) => { };
 
 export const forgotPassword = async (req, res) => { };
