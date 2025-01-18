@@ -1,5 +1,6 @@
 import db from "../../db/models/index.js";
 const { ArtGallery } = db;
+const { Event } = db;
 
 export const gallerySearch = async (req, res) => { };
 export const getGalleries = async (req, res) => { };
