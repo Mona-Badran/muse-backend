@@ -1,0 +1,1 @@
+export const gallerySearch = async (req, res) => { };
