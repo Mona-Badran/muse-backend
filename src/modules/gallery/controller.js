@@ -1,4 +1,6 @@
 import db from "../../db/models/index.js";
+import { Op } from 'sequelize';
+
 const { ArtGallery } = db;
 const { Event } = db;
 
@@ -23,6 +25,9 @@ export const gallerySearch = async (req, res) => {
 export const getGalleries = async (req, res) => { 
     try {  
         const galleries = await ArtGallery.findAll();
+        if (galleries.length === 0) {
+            return res.status(404).send({ message: "No galleries found" });
+        }
         return res.send(galleries);
     } catch (error) {
         return res.status(500).send({
