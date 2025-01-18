@@ -19,6 +19,7 @@ export const gallerySearch = async (req, res) => {
         res.status(500).send({ message: error.message });
     }
 };
+
 export const getGalleries = async (req, res) => { 
     try {  
         const galleries = await ArtGallery.findAll();
@@ -29,6 +30,7 @@ export const getGalleries = async (req, res) => {
         });
     };
 };
+
 export const getGallery = async (req, res) => { };
 export const getEvent = async (req, res) => { };
 export const createEvent = async (req, res) => { };
