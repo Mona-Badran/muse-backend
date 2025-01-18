@@ -71,6 +71,8 @@ export const logout = async (req, res) => {
         if (!token) {
             return res.status(400).send({ message: 'No token provided.' });
         }
+        res.clearCookie('authToken', { httpOnly: true });
+        
     } catch (error) {}
 };
 
