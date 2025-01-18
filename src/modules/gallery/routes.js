@@ -4,3 +4,4 @@ import { gallerySearch, getEvent, getGalleries, getGallery } from "./controller.
 const galleryRouter = new Router();
 
 galleryRouter.get("/", getGalleries);
+galleryRouter.get("/search", gallerySearch);
