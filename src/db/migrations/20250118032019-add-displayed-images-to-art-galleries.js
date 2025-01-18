@@ -7,6 +7,6 @@ export default {
   },
 
   async down (queryInterface, Sequelize) {
-
+    await queryInterface.removeColumn('art_galleries', 'displayed_images');
   }
 };
