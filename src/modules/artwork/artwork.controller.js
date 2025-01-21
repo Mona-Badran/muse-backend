@@ -7,6 +7,8 @@ export const getImage = async (req, res) => {
     try {
         const { user_id, ML_result_id } = req.body;
 
+        user_id = parseInt(req.body.user_id, 10);
+
         if (!user_id) {
             return res.status(400).send({ message: "User ID is required" });
         }
@@ -20,7 +22,7 @@ export const getImage = async (req, res) => {
 
         return res.status(201).send({
             message: "Image uploaded and saved to database successfully",
-            imageUrl: imageUrl,
+            imageUrl: imageEntry,
         });
     } catch (error) {
         return res.status(400).send({ message: error });
