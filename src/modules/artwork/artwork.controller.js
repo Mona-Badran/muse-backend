@@ -19,7 +19,7 @@ export const getImage = async (req, res) => {
         });
 
         return res.status(201).send({
-            message: "Image uploaded successfully",
+            message: "Image uploaded and saved to database successfully",
             imageUrl: imageUrl,
         });
     } catch (error) {
