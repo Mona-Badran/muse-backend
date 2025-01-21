@@ -27,7 +27,7 @@ export const uploadImage = (req, res) => {
             } else if (!req.file) {
                 reject("No image provided");
             } else {
-                const imageUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+                const imageUrl = `/artwork/uploads/${req.file.filename}`;
                 resolve(imageUrl);
             }
         });
