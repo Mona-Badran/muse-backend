@@ -1,6 +1,6 @@
 import db from "../../db/models/index.js";
 import jwt from "jsonwebtoken";
-import { handlePassword } from "./service.js";
+import { handlePassword } from "./auth.service.js";
 
 const { User } = db;
 const { ArtGallery } = db;

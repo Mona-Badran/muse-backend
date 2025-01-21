@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { gallerySearch, getEvent, getGalleries, getGallery, updateimages, createEvent } from "./controller.js";
+import { gallerySearch, getEvent, getGalleries, getGallery, updateimages, createEvent } from "./gallery.controller.js";
 
 const galleryRouter = new Router();
 
