@@ -3,6 +3,8 @@ import { uploadImage } from "./artwork.service.js";
 
 const { Image } = db;
 
+export const uploadArtwork = async (req, res) => {};
+
 export const getImage = async (req, res) => {
     try {
         const { user_id, ML_result_id } = req.body;
