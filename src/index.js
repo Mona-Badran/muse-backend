@@ -2,9 +2,9 @@ import express from "express";
 import dotenv from 'dotenv';
 import { init, registerRoutes} from './config/init.js';
 import connectToDatabase from './db/connection.js';
-import authRouter from './modules/auth/routes.js';
-import galleryRouter from './modules/gallery/routes.js';
-import artworkRouter from './modules/artwork/routes.js';
+import authRouter from './modules/auth/auth.routes.js';
+import galleryRouter from './modules/gallery/gallery.routes.js';
+import artworkRouter from './modules/artwork/artwork.routes.js';
 
 const app = express();
 dotenv.config();
