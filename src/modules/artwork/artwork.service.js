@@ -12,18 +12,15 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage }).single('image');
 
-export const saveImage  = (req, res) => {};
-
-export const uploadImage = (req, res) => {
+export const saveImage  = (req, res) => {
     return new Promise((resolve, reject) => {
         upload(req, res, (err) => {
             if (err) {
-                reject("Error uploading image");
+                reject(new Error('Image upload failed'));
             } else if (!req.file) {
-                reject("No image provided");
+                reject(new Error('No image provided'));
             } else {
-                const imageUrl = `/artwork/uploads/${req.file.filename}`;
-                resolve(imageUrl);
+                resolve(`/uploads/${req.file.filename}`);
             }
         });
     });
