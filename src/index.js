@@ -18,8 +18,8 @@ registerRoutes(app, authRouter);
 
 app.use("/auth", authRouter);
 app.use("/gallery", galleryRouter);
-app.use("/artwork", artworkRouter);
 app.use('/uploads', express.static('src/modules/artwork/uploads'));
+app.use("/artwork", artworkRouter);
 
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`Server running on port ${process.env.SERVER_PORT}`);
