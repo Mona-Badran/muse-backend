@@ -3,7 +3,7 @@ import { uploadImage } from "./artwork.service.js";
 
 export const getImage = async (req, res) => {
     try {
-        const imageUrl = await getImage(req, res);
+        const imageUrl = await uploadImage(req, res);
         return res.status(201).send({
             message: "Image uploaded successfully",
             imageUrl: imageUrl,
