@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from 'dotenv';
-import path from "path";
+import cors from 'cors';
 import { init, registerRoutes} from './config/init.js';
 import connectToDatabase from './db/connection.js';
 import authRouter from './modules/auth/auth.routes.js';
