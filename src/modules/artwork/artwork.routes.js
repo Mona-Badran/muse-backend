@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {getImage} from "./artwork.controller.js";
+import { getImage } from "./artwork.controller.js";
 
 const artworkRouter = new Router();
 
