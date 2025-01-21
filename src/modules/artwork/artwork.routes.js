@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getImage } from "./artwork.controller.js";
+import { uploadArtwork } from "./artwork.controller.js";
 
 const artworkRouter = new Router();
 
-artworkRouter.post("/upload", getImage);
+artworkRouter.post("/upload", uploadArtwork);
 
 export default artworkRouter;
