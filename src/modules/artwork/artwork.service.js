@@ -19,6 +19,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage }).single("image");
 
+export const saveImage  = (req, res) => {};
+
 export const uploadImage = (req, res) => {
     return new Promise((resolve, reject) => {
         upload(req, res, (err) => {
