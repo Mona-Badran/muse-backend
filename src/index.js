@@ -16,7 +16,7 @@ registerRoutes(app, authRouter);
 app.use("/auth", authRouter);
 app.use("/gallery", galleryRouter);
 app.use("/artwork", artworkRouter);
-app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
+app.use("/artwork/uploads", express.static(path.join(process.cwd(), "src", "modules", "artwork", "uploads")));
 
 
 app.listen(process.env.SERVER_PORT, () => {
