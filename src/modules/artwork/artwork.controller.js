@@ -5,6 +5,8 @@ const { Image } = db;
 
 export const getImage = async (req, res) => {
     try {
+        const { user_id, ML_result_id } = req.body;
+
         const imageUrl = await uploadImage(req, res);
         return res.status(201).send({
             message: "Image uploaded successfully",
