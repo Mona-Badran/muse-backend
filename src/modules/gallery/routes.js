@@ -9,3 +9,5 @@ galleryRouter.get("/:id", getGallery);
 galleryRouter.get("/event/:id", getEvent);
 galleryRouter.post("/event", createEvent);
 galleryRouter.put("/:id", updateimages);
+
+export default galleryRouter;
