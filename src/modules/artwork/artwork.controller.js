@@ -1,4 +1,5 @@
 import db from "../../db/models/index.js";
+import { uploadImage } from "./artwork.service.js";
 
 export const getImage = async (req, res) => {
     try {
