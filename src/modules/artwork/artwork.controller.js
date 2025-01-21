@@ -7,6 +7,9 @@ export const getImage = async (req, res) => {
     try {
         const { user_id, ML_result_id } = req.body;
 
+        if (!user_id) {
+            return res.status(400).send({ message: "User ID is required" });
+        }
         const imageUrl = await uploadImage(req, res);
         return res.status(201).send({
             message: "Image uploaded successfully",
