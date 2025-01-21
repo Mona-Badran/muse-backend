@@ -1,5 +1,5 @@
 import db from "../../db/models/index.js";
-import { uploadImage } from "./artwork.service.js";
+import { saveImage } from "./artwork.service.js";
 
 const { Image } = db;
 
