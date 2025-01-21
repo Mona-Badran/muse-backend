@@ -1,8 +1,8 @@
 import db from "../../db/models/index.js";
 
-export const uploadImage = async (req, res) => {
+export const getImage = async (req, res) => {
     try {
-        const imageUrl = await uploadImage(req, res);
+        const imageUrl = await getImage(req, res);
         return res.status(201).send({
             message: "Image uploaded successfully",
             imageUrl: imageUrl,
