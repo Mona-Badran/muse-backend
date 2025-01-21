@@ -10,7 +10,7 @@ if (!fs.existsSync(uploads)) {
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "uploads/");
+        cb(null, path.join(process.cwd(), 'src/modules/artwork/uploads'));
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}-${file.originalname}`);
