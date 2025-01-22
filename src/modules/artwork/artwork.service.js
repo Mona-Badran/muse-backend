@@ -23,7 +23,24 @@ export const saveImage  = (req, res) => {
             } else if (!req.file) {
                 reject(new Error('No image provided'));
             } else {
-                resolve(`/uploads/${req.file.filename}`);
+                try {
+                    // Mock user_id = 1
+                    const userId = 1;
+                    const imageUrl = `/uploads/${req.file.filename}`;
+
+                    // Save image URL in database
+                    const newImage = Image.create({
+                        image_url: imageUrl,
+                        user_id: userId,
+                        ML_result_id: null, // Default value, update later if needed
+                    });
+                    console.log("lololo"+newImage);
+                    
+
+                    resolve(imageUrl);
+                } catch (dbError) {
+                    reject(new Error('Database insertion failed'));
+                }
             }
         });
     });
