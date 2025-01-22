@@ -2,6 +2,11 @@ export default (sequelize, DataTypes) => {
     const Image = sequelize.define(
         'Image',
         {
+            id: {
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true,
+            },
             image_url:
             {
                 type: DataTypes.TEXT,
