@@ -3,10 +3,10 @@ export default (sequelize, DataTypes) => {
         'User',
         {
             id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
-        },
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true,
+            },
             username: {
                 type: DataTypes.STRING,
                 allowNull: false,
@@ -34,6 +34,6 @@ export default (sequelize, DataTypes) => {
             as: 'user_type',
         });
     };
-    
+
     return User;
 };
