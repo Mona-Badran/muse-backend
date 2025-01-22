@@ -2,6 +2,11 @@ export default (sequelize, DataTypes) => {
     const Site = sequelize.define(
         'Site',
         {
+            id: {
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true,
+            },
             name:
             {
                 type: DataTypes.STRING,
