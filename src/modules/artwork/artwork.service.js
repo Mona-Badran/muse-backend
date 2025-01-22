@@ -4,7 +4,6 @@ import db from "../../db/models/index.js";
 
 const { Image } = db;
 
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(process.cwd(), 'src/modules/artwork/uploads'));
