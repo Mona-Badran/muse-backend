@@ -2,6 +2,11 @@ export default (sequelize, DataTypes) => {
     const UserType = sequelize.define(
         'UserType',
         {
+            id: {
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true,
+            },
             user_type: {
                 type: DataTypes.STRING,
                 allowNull: false,
