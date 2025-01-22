@@ -1,7 +1,4 @@
-import db from "../../db/models/index.js";
 import { saveImage } from "./artwork.service.js";
-
-const { Image } = db;
 
 export const uploadArtwork = async (req, res) => {
     try {
