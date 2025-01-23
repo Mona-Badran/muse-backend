@@ -2,6 +2,11 @@ export default (sequelize, DataTypes) => {
     const Event = sequelize.define(
         'Event',
         {
+            id: {
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true,
+            },
             name:
             {
                 type: DataTypes.STRING,

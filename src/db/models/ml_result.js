@@ -2,6 +2,11 @@ export default (sequelize, DataTypes) => {
     const MLResult = sequelize.define(
         'MLResult',
         {
+            id: {
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true,
+            },
             style:
             {
                 type: DataTypes.STRING,

@@ -1,6 +1,6 @@
 import db from "../../db/models/index.js";
 import jwt from "jsonwebtoken";
-import { handlePassword } from "./service.js";
+import { handlePassword } from "./auth.service.js";
 
 const { User } = db;
 const { ArtGallery } = db;
@@ -65,6 +65,20 @@ export const register = async (req, res) => {
     }
 };
 
-export const logout = async (req, res) => { };
+export const logout = async (req, res) => { 
+    try {
+        const token = req.headers.authorization?.split(' ')[1];
+        if (!token) {
+            return res.status(400).send({ message: 'No token provided.' });
+        }
+        res.clearCookie('authToken', { httpOnly: true });
+
+        return res.status(200).send({ message: 'Logged out successfully.' });
+
+    } catch (error) {
+        console.error('Error during logout:', error.message);
+        return res.status(500).send({ message: 'Logout failed. Please try again.' });
+    }
+};
 
 export const forgotPassword = async (req, res) => { };
